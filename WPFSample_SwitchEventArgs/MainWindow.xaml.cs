@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Input;
 
 namespace WPFSample_SwitchEventArgs
@@ -23,7 +24,7 @@ namespace WPFSample_SwitchEventArgs
         private void SampleControl_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             SampleMouseEventArgs ev = e as SampleMouseEventArgs;
-            MessageBox.Show("Raised MouseLeftButtonDown Event - event : " + ev);
+            MessageBox.Show(string.Format("Raised MouseLeftButtonDown{0}{1}", Environment.NewLine, ev));
         }
         /// <summary>
         /// 
@@ -33,7 +34,7 @@ namespace WPFSample_SwitchEventArgs
         private void SampleControl_SampleChanged(object sender, RoutedEventArgs e)
         {
             SampleEventArgs ev = e as SampleEventArgs;
-            MessageBox.Show("Raised SampleChanged Event - event : " + ev);
+            MessageBox.Show(string.Format("Raised SampleChanged{0}{1}", Environment.NewLine, ev));
         }
     }
 }
